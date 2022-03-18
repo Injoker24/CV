@@ -90,7 +90,8 @@ body {
     position: absolute;
     bottom: -0.5rem;
     left: 0rem;
-    transform: scale(0, 4);
+    transform: scale(0, 3);
+    transform-origin: left bottom;
     transition: transform 0.5s cubic-bezier(0.645, 0.045, 0.355, 1);
 }
 
