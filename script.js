@@ -24,3 +24,15 @@ links.forEach(link => {
         innerCursor.classList.remove("grow");
     })
 })
+
+const observer1 = new IntersectionObserver(entries => {
+    entries.forEach(entry => {
+        if (entry.isIntersecting) {
+            entry.target.classList.add('project-header-animation');
+            return;
+        }
+    });
+});
+
+
+observer1.observe(document.querySelector('.project-header'));

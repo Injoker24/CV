@@ -10,11 +10,12 @@ html {
     --white: #eeecea;
     --yellow: #F6BD60;
     --black: #2D2D34;
+    --typewriterSpeed: 1s;
 }
 
 body {
     margin: 0%;
-    font-family: Helvetica, sans-serif;
+    font-family: Helvetica, sans-serif, monospace;
     background-color: var(--black);
 }
 
@@ -109,6 +110,7 @@ body {
     margin-left: 10px;
     display: flex;
     flex-direction: row;
+    margin-bottom: 240px;
 }
 
 .intro {
@@ -175,6 +177,12 @@ body {
     display: flex;
     align-items: center;
     justify-content: center;
+    transition: transform 0.3s cubic-bezier(0.645, 0.045, 0.355, 1);
+}
+
+.contact-button:hover {
+    transform: scale(1.1);
+    transition: transform 0.3s cubic-bezier(0.645, 0.045, 0.355, 1);
 }
 
 .contact-button a {
@@ -182,4 +190,113 @@ body {
     font-size: 20px;
     font-weight: bolder;
     text-decoration: none;
+}
+
+.projects-container {
+    display: flex;
+    flex-direction: column;
+}
+
+.project-header {
+    color: var(--white);
+    font-size: 64px;
+    font-weight: bolder;
+    position: relative;
+    width: max-content;
+}
+
+.dot {
+    color: var(--yellow);
+}
+
+.project-header-animation {
+
+}
+
+.project-header-animation::before,
+.project-header-animation::after {
+    content: " ";
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+}
+
+.project-header-animation::before {
+    background: var(--black);
+    animation: 
+        typewriter var(--typewriterSpeed) steps(9) 1s forwards;
+}
+
+.project-header::after {
+    width: 0.1em;
+    background: var(--yellow);
+    animation: 
+        typewriter var(--typewriterSpeed) steps(9) 1s forwards,
+        blinking 500ms steps(9) infinite;
+}
+
+@keyframes typewriter {
+    to {
+        left: 100%;
+    }
+}
+
+@keyframes blinking {
+    to {
+        background: transparent;
+    }
+}
+
+.project-divider {
+    background-color: var(--yellow);
+    width: 10rem;
+    height: 0.3rem;
+    border-radius: 10px;
+    margin-top: 50px;
+}
+
+.project-category {
+   
+}
+
+.project-subheader {
+    margin-top: 100px;
+    color: var(--white);
+    font-size: 36px;
+    font-weight: lighter;
+    position: relative;
+}
+
+.projet-subdivider {
+    background-color: var(--yellow);
+    width: 5rem;
+    height: 0.3rem;
+    border-radius: 10px;
+    margin-top: 50px;
+}
+
+.projects {
+
+}
+
+.indiv-project {
+
+}
+
+.project-image {
+
+}
+
+.project-cover {
+
+}
+
+.project-title {
+
+}
+
+.project-desc {
+
 }
